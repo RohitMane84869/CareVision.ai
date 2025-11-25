@@ -3,22 +3,22 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Splash from "./pages/Splash";
-import Onboarding from "./pages/Onboarding";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
-import GovernmentSchemes from "./pages/GovernmentSchemes";
-import DiseaseAlert from "./pages/DiseaseAlert";
-import VaccineRegistration from "./pages/VaccineRegistration";
-import AIChatbot from "./pages/AIChatbot";
-import AboutUs from "./pages/AboutUs";
-import Profile from "./pages/Profile";
-import NotFound from "./pages/NotFound";
+import Splash from "./pages/Splash.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import GovernmentSchemes from "./pages/GovernmentSchemes.jsx";
+import DiseaseAlert from "./pages/DiseaseAlert.jsx";
+import VaccineRegistration from "./pages/VaccineRegistration.jsx";
+import AIChatbot from "./pages/AIChatbot.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import Profile from "./pages/Profile.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const queryClient = new QueryClient();
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
